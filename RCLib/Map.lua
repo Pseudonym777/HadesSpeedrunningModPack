@@ -289,7 +289,7 @@ RCLib.NameToCode = {
 
         -- Tartarus Enemies
         Brimstone = "HeavyRanged",
-        Lout = "PunchingBag",
+        Lout = "PunchingBagUnit",
         Numbskull = "Swarmer",
         Pest = "ThiefMineLayer",
         Skullomat = "LightSpawner",
@@ -299,7 +299,7 @@ RCLib.NameToCode = {
 
         -- Tartarus Armored
         ArmoredBrimstone = "HeavyRangedElite",
-        ArmoredLout = "PunchingBagElite",
+        ArmoredLout = "PunchingBagUnitElite",
         ArmoredNumbskull = "SwarmerElite",
         ArmoredPest = "ThiefMineLayerElite",
         ArmoredSkullomat = "LightSpawnerElite",
@@ -308,7 +308,7 @@ RCLib.NameToCode = {
         ArmoredWringer = "DisembodiedHandElite",
 
         -- Tartarus Super Elite
-        SuperEliteLout = "PunchingBagSuperElite",
+        SuperEliteLout = "PunchingBagUnitSuperElite",
         SuperEliteNumbskull = "SwarmerSuperElite",
         SuperEliteSkullomat = "LightSpawnerSuperElite",
         SuperEliteThug = "HeavyMeleeSuperElite",

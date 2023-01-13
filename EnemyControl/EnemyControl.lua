@@ -42,6 +42,24 @@ EnemyControl.Presets = { -- Define rulesets
             TinyRat = false,
         }
     },
+    Hypermodded3 = {
+        Tartarus = {
+            Numbskull = false,
+            Witch = false,
+        },
+        Asphodel = {
+            Bloodless = false,
+            Gorgon = false,
+        },
+        Elysium = {
+            Bowman = false,
+            Swordsman = false,
+            Flamewheel = false,
+        },
+        StyxSmallRoom = {
+            TinyRat = false,
+        }
+    },
     RatsOClock = {
         Tartarus = {
             TinyRat = true,
@@ -73,6 +91,9 @@ EnemyControl.Presets = { -- Define rulesets
         StyxSmallRoomSingle = {
             TinyRat = true,
         },
+        StyxBigRoom = {
+            TinyRat = true,
+        }
     },
     Neuron = {
         Tartarus = {
@@ -105,6 +126,9 @@ EnemyControl.Presets = { -- Define rulesets
         StyxSmallRoomSingle = {
             ArmoredSplitter = true,
         },
+        StyxBigRoom = {
+            ArmoredSplitter = true,
+        },
     },
 }
 
@@ -113,6 +137,12 @@ EnemyControl.InheritVanilla = { -- Biomes set to true will inherit the vanilla e
         StyxSmallRoom = true,
     },
     Hypermodded2 = {
+        Tartarus = true,
+        Asphodel = true,
+        Elysium = true,
+        StyxSmallRoom = true,
+    },
+    Hypermodded3 = {
         Tartarus = true,
         Asphodel = true,
         Elysium = true,
@@ -130,33 +160,19 @@ EnemyControl.RuleOverrides = { -- Any overrides to enemy eligibility are made he
 
 function EnemyControl.ReadPreset() --Read current preset and create table of enemies marked as eligible
     local Preset = EnemyControl.Presets[config.EnemySetting]
-    local InheritVanilla = {}
-    if EnemyControl.InheritVanilla[config.EnemySetting] ~= nil then
-        InheritVanilla = EnemyControl.InheritVanilla[config.EnemySetting]
-    end
+    local InheritVanilla = EnemyControl.InheritVanilla[config.EnemySetting] or {}
     for biome, _ in pairs(Preset) do
         EnemyControl.EligibleEnemies[biome] = {}
         if InheritVanilla[biome] == true then
-            RCLib.PopulateMinLength(
-                EnemyControl.EligibleEnemies[biome],
-                RCLib.RemoveIneligibleStrings(Preset[biome],EnemyControl.VanillaSets[RCLib.EncodeEnemySet(biome)],RCLib.NameToCode.Enemies),
-                1
-            )
+            EnemyControl.EligibleEnemies[biome] = RCLib.RemoveIneligibleStrings(Preset[biome],EnemyControl.VanillaSets[RCLib.EncodeEnemySet(biome)],RCLib.NameToCode.Enemies)
         else
-            RCLib.PopulateMinLength(
-                EnemyControl.EligibleEnemies[biome],
-                RCLib.GetEligible(Preset[biome],RCLib.NameToCode.Enemies),
-                1
-            )
+            EnemyControl.EligibleEnemies[biome] = RCLib.GetEligible(Preset[biome],RCLib.NameToCode.Enemies)
         end
     end
 end
 
 function EnemyControl.UpdatePools() -- Inject every non-empty biome of the current preset into the relevant biomes in EnemySets.lua
     DebugPrint({Text = "Enemy preset: "..EnemyControl.config.EnemySetting})
-    if EnemyControl.InheritVanilla[config.EnemySetting] ~= nil then
-        InheritVanilla = EnemyControl.InheritVanilla[config.EnemySetting]
-    end
     for biome, pool in pairs(EnemyControl.EligibleEnemies) do
         EnemyControl.Target = RCLib.EncodeEnemySet(biome)
         EnemyControl.Pool = pool
@@ -181,13 +197,9 @@ end, EnemyControl)
 ModUtil.Path.Wrap("IsEnemyEligible", function ( baseFunc, enemyName, encounter, wave )
     local Preset = EnemyControl.config.EnemySetting
     local EnemyRef = RCLib.DecodeEnemy(enemyName)
-    local Overrides = {}
-    if EnemyControl.RuleOverrides[Preset] ~= nil and EnemyControl.RuleOverrides[Preset][EnemyRef] ~= nil then
-        Overrides = EnemyControl.RuleOverrides[Preset][EnemyRef]
-    end
+    local Overrides = ModUtil.IndexArray.Get( EnemyControl.RuleOverrides, { Preset, EnemyRef } ) or {}
     if Overrides.HardForce then
         return true
     end
     return baseFunc( enemyName, encounter, wave )
 end, EnemyControl)
-
