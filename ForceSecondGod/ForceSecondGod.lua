@@ -19,12 +19,14 @@ ForceSecondGod.GodKeepsakes = {
 }
 
 function ForceSecondGod.IsGodForceEligible( room, godToForce, keepsakeGod, keepsakeCharges, previousOffers )
+    timesForceSeen = CurrentRun.LootTypeHistory[godToForce] or 0
+    
     if room.ChosenRewardType ~= "Boon"
     or not room.IsMiniBossRoom
     or Contains( previousOffers, godToForce )
     or keepsakeCharges > 0 and not Contains( previousOffers, keepsakeGod )
-    or godToForce == keepsakeGod and CurrentRun.LootTypeHistory[godToForce] >= 2
-    or godToForce ~= keepsakeGod and CurrentRun.LootTypeHistory[godToForce] >= 1
+    or godToForce == keepsakeGod and timesForceSeen >= 2
+    or godToForce ~= keepsakeGod and timesForceSeen >= 1
     or ReachedMaxGods()
     then
         return false
