@@ -258,6 +258,7 @@ function HSMConfigMenu.CreateHypermoddedMenu( screen )
   })
 
   itemLocationY = itemLocationY + itemSpacingY
+
 -----------------
 -- FreeRoomControl settings
 -----------------
@@ -293,7 +294,7 @@ screen.Components["FreeRoomControlEnabledTextBox"] = CreateScreenComponent({
   itemLocationY = itemLocationY + itemSpacingY
 
   -----------------
-  -- SaytrSackControl short tunnel settings
+  -- SatyrSackControl short tunnel settings
   -----------------
   screen.Components["SatyrSackControlShortTunnelEnabledTextBox"] = CreateScreenComponent({
       Name = "BlankObstacle",
@@ -660,6 +661,24 @@ screen.Components["FreeRoomControlEnabledTextBox"] = CreateScreenComponent({
     Items = rarityOptions,
   })
   itemLocationY = itemLocationY + itemSpacingY
+
+  screen.Components["SleepSaysThanks"] = CreateScreenComponent({
+    Name = "BlankObstacle",
+    Scale = 1,
+    X = itemLocationX,
+    Y = itemLocationY,
+    Group = "Combat_Menu"
+  })
+  CreateTextBox({
+    Id = screen.Components["SleepSaysThanks"].Id,
+    Text = "Thank you Zyru, and thank you everyone.\\n I love you all. - Sleep",
+    Color = Color.Gray,
+    FontSize = 14,
+    OffsetX = 0, OffsetY = 0,
+    Font = "AlegrayaSansSCRegular",
+    ShadowBlur = 0, ShadowColor = { 0, 0, 0, 1 }, ShadowOffset = { 0,  2 },
+    Justification = "Left"
+  })
 end
 
 function CreateSecondGodPicker( screen, aspect, xpos, ypos)
@@ -1125,7 +1144,7 @@ function RefreshUIComponents ( screen, args )
   end
 
   if Contains(args.ComponentsToRefresh, HypermoddedMenu.Keys.FirstHammerDropdown)
-    and BoonControl.config.enabled and BoonControl.config.AllowedHammerControl >= 1 then
+    and BoonControl.config.Enabled and BoonControl.config.AllowedHammerControl >= 1 then
     UpdateDropdown(
       screen,
       HypermoddedMenu.UIComponents[HypermoddedMenu.Keys.FirstHammerDropdown],
@@ -1135,7 +1154,7 @@ function RefreshUIComponents ( screen, args )
   end
 
   if Contains(args.ComponentsToRefresh, HypermoddedMenu.Keys.SecondHammerDropdown)
-    and BoonControl.config.enabled and BoonControl.config.AllowedHammerControl >= 2 then
+    and BoonControl.config.Enabled and BoonControl.config.AllowedHammerControl >= 2 then
     UpdateDropdown(
       screen,
       HypermoddedMenu.UIComponents[HypermoddedMenu.Keys.SecondHammerDropdown],

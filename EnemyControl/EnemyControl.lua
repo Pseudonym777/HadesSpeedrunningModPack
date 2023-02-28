@@ -32,26 +32,6 @@ EnemyControl.Presets = { -- Define rulesets
             Gorgon = false,
         },
         Elysium = {
-            Spearman = false,
-            Bowman = false,
-            Shieldsman = false,
-            Swordsman = false,
-            Flamewheel = false,
-        },
-        StyxSmallRoom = {
-            TinyRat = false,
-        }
-    },
-    Hypermodded3 = {
-        Tartarus = {
-            Numbskull = false,
-            Witch = false,
-        },
-        Asphodel = {
-            Bloodless = false,
-            Gorgon = false,
-        },
-        Elysium = {
             Bowman = false,
             Swordsman = false,
             Flamewheel = false,
@@ -142,12 +122,6 @@ EnemyControl.InheritVanilla = { -- Biomes set to true will inherit the vanilla e
         Elysium = true,
         StyxSmallRoom = true,
     },
-    Hypermodded3 = {
-        Tartarus = true,
-        Asphodel = true,
-        Elysium = true,
-        StyxSmallRoom = true,
-    }
 }
 
 EnemyControl.RuleOverrides = { -- Any overrides to enemy eligibility are made here. Only option currently supported is HardForce, which will make the enemy always eligible to appear. TODO add overrides for minimum and maximum biome depth per biome

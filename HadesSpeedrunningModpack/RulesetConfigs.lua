@@ -9,8 +9,6 @@ HSMConfigMenu.RulesetSettings = {
 
     {Key = "EllosBoonSelectorMod.config.ShowPreview", Values = {false, true}, Default = false},
 
-    {Key = "RunStartControl.config.Enabled", Values = {false, true}, Default = true},
-
     {Key = "InteractableChaos.config.Enabled", Values = {false, true}, Default = false},
 
     {Key = "RemoveCutscenes.config.RemoveIntro", Values = {false, true}, Default = true},
@@ -61,8 +59,6 @@ HSMConfigMenu.MultiRunSettings = {
     {Key = "DoorVisualIndicators.config.ShowFountainDoorIndictor", Values = {false, true}, Default = true},
 
     {Key = "EllosBoonSelectorMod.config.ShowPreview", Values = {false, true}, Default = false},
-
-    {Key = "RunStartControl.config.Enabled", Values = {false, true}, Default = true},
 
     {Key = "InteractableChaos.config.Enabled", Values = {false, true}, Default = false},
 
@@ -115,8 +111,6 @@ HSMConfigMenu.SingleRunSettings = {
 
     {Key = "EllosBoonSelectorMod.config.ShowPreview", Values = {false, true}, Default = false},
 
-    {Key = "RunStartControl.config.Enabled", Values = {false, true}, Default = true},
-
     {Key = "InteractableChaos.config.Enabled", Values = {false, true}, Default = false},
 
     {Key = "RemoveCutscenes.config.RemoveIntro", Values = {false, true}, Default = true},
@@ -167,8 +161,6 @@ HSMConfigMenu.HypermoddedRTASettings = {
     {Key = "DoorVisualIndicators.config.ShowFountainDoorIndictor", Values = {false, true}, Default = true},
     
     {Key = "EllosBoonSelectorMod.config.ShowPreview", Values = {false, true}, Default = false},
-
-    {Key = "RunStartControl.config.Enabled", Values = {false, true}, Default = true},
 
     {Key = "InteractableChaos.config.Enabled", Values = {false, true}, Default = false},
 
@@ -221,8 +213,6 @@ HSMConfigMenu.HypermoddedIGTSettings = {
     {Key = "DoorVisualIndicators.config.ShowFountainDoorIndictor", Values = {false, true}, Default = true},
     
     {Key = "EllosBoonSelectorMod.config.ShowPreview", Values = {false, true}, Default = false},
-
-    {Key = "RunStartControl.config.Enabled", Values = {false, true}, Default = true},
 
     {Key = "InteractableChaos.config.Enabled", Values = {false, true}, Default = false},
 

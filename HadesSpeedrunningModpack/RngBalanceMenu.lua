@@ -88,7 +88,7 @@ function HSMConfigMenu.CreateRNGMenu( screen )
   })
   CreateTextBox({
     Id = screen.Components["SackModdedTextBox"].Id,
-    Text = "Use Modded Saytr Sack: ",
+    Text = "Use Modded Satyr Sack: ",
     Color = Color.BoonPatchCommon,
     FontSize = 16,
     OffsetX = 0, OffsetY = 0,
@@ -614,38 +614,6 @@ function HSMConfigMenu.CreateRNGMenu( screen )
     ShadowBlur = 0, ShadowColor = { 0, 0, 0, 1 }, ShadowOffset = { 0,  2 },
     Justification = "Left",
   })
-  itemLocationY = itemLocationY + itemSpacingY
-
-  -- Hammers
-  screen.Components["HammerControlTextBox"] = CreateScreenComponent({
-    Name = "BlankObstacle",
-    Scale = 1,
-    X = itemLocationX,
-    Y = itemLocationY,
-    Group = "Combat_Menu"
-  })
-  CreateTextBox({
-    Id = screen.Components["HammerControlTextBox"].Id,
-    Text = "Set Hammers by Aspect: ",
-    Color = Color.BoonPatchCommon,
-    FontSize = 16,
-    OffsetX = 0, OffsetY = 0,
-    Font = "AlegrayaSansSCRegular",
-    ShadowBlur = 0, ShadowColor = { 0, 0, 0, 1 }, ShadowOffset = { 0,  2 },
-    Justification = "Left"
-  })
-  screen.Components["HammerControlCheckBox"] = CreateScreenComponent({
-    Name = "RadioButton",
-    Scale = 1,
-    X = itemLocationX + itemSpacingX,
-    Y = itemLocationY,
-    Group = "CombatMenu"
-  })
-  screen.Components["HammerControlCheckBox"].Config = "RunStartControl.config.Enabled"
-  screen.Components["HammerControlCheckBox"].OnPressedFunctionName = "HSMConfigMenu__ToggleGenericConfigCheckBox"
-  itemLocationY = itemLocationY + itemSpacingY
-
-  HSMConfigMenu__UpdateGenericConfigCheckbox(screen, screen.Components["HammerControlCheckBox"])
   itemLocationY = itemLocationY + itemSpacingY
 end
 

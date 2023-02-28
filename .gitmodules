@@ -1,6 +1,3 @@
-[submodule "RunStartControl"]
-	path = RunStartControl
-	url = https://github.com/Museus/RunStartControl.git
 [submodule "sgg-mod-modutil"]
 	path = ModUtil
 	url = https://github.com/SGG-Modding/sgg-mod-modutil.git
