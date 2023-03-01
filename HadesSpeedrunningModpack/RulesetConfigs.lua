@@ -272,12 +272,12 @@ HSMConfigMenu.NonRulesetSettings = {
 }
   
 HSMConfigMenu.SettingsDefaults = {
-    RulesetSettings = 367836398617,
-    MultiRunSettings = 367836398617,
-    SingleRunSettings = 367836398616,
+    RulesetSettings = 178857837593,
+    MultiRunSettings = 178857837593,
+    SingleRunSettings = 178857837592,
     NonRulesetSettings = 0,
-    HypermoddedIGTSettings = 367839229668,
-    HypermoddedRTASettings = 367839229669,
+    HypermoddedIGTSettings = 178860668644,
+    HypermoddedRTASettings = 178860668645,
 }
 
 -- Note: Add a key here to print out the default hash setting values on startup.
