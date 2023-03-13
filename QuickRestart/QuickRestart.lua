@@ -104,9 +104,13 @@ end, QuickRestart)
 
 ModUtil.Path.Context.Wrap("HandleDeath", function ()
     ModUtil.Path.Wrap("LoadMap", function(baseFunc, argTable)
+        --In some cases IsDead will be set to false by DoPatches() causing the "mirror bug"
+        CurrentRun.Hero.IsDead = true
+
         if QuickRestart.UsedQuickRestart or QuickRestart.QuickDeathApplicable then
             argTable.Name = "RoomPreRun"
-            CurrentDeathAreaRoom = "DeathArea"
+
+
 
             if QuickRestart.KeepStartingKeepsake and GameState.QuickRestartStartingKeepsake then
               GameState.LastAwardTrait = GameState.QuickRestartStartingKeepsake
