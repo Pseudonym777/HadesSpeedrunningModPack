@@ -110,8 +110,6 @@ ModUtil.Path.Context.Wrap("HandleDeath", function ()
         if QuickRestart.UsedQuickRestart or QuickRestart.QuickDeathApplicable then
             argTable.Name = "RoomPreRun"
 
-
-
             if QuickRestart.KeepStartingKeepsake and GameState.QuickRestartStartingKeepsake then
               GameState.LastAwardTrait = GameState.QuickRestartStartingKeepsake
             end
