@@ -106,6 +106,7 @@ ModUtil.Path.Context.Wrap("HandleDeath", function ()
     ModUtil.Path.Wrap("LoadMap", function(baseFunc, argTable)
         if QuickRestart.UsedQuickRestart or QuickRestart.QuickDeathApplicable then
             argTable.Name = "RoomPreRun"
+            CurrentDeathAreaRoom = "DeathArea"
 
             if QuickRestart.KeepStartingKeepsake and GameState.QuickRestartStartingKeepsake then
               GameState.LastAwardTrait = GameState.QuickRestartStartingKeepsake
