@@ -24,9 +24,6 @@ end)
 
 function HSMConfigMenu.CreateSettingsHashMenu( screen )
   
-  local h = CalculateHash(HSMConfigMenu.HypermoddedIGTSettings, _G)
-  local hHash =  HSMConfigMenu.ConvertIntToBase25(h, 5)
-  -- DebugPrint { Text = "h: " .. ModUtil.ToString.Deep(hHash)}
   ------------------
   -- Ruleset Hash
   ------------------
@@ -126,9 +123,9 @@ function HSMConfigMenu.CreateSettingsHashMenu( screen )
           HSMConfigMenu.SaveSettingsToGlobal()
         end},
         
-        {Text = "Hypermodded (IGT) Ruleset",  event = function() 
-          HSMConfigMenu.LoadSettings("HypermoddedIGTSettings")
-          local rulesetHashInt = CalculateHash(HSMConfigMenu.HypermoddedIGTSettings, _G)
+        {Text = "Current Hypermodded (IGT) Ruleset",  event = function() 
+          HSMConfigMenu.LoadSettings("CurrentHypermoddedIGTSettings")
+          local rulesetHashInt = CalculateHash(HSMConfigMenu.CurrentHypermoddedIGTSettings, _G)
           local rulesetHash =  HSMConfigMenu.ConvertIntToBase25(rulesetHashInt, 5)
           HSMConfigMenu.CurrentRulesetHash = rulesetHash
 
@@ -140,9 +137,37 @@ function HSMConfigMenu.CreateSettingsHashMenu( screen )
           HSMConfigMenu.SaveSettingsToGlobal()
         end},
         
-        {Text = "Hypermodded (RTA) Ruleset",  event = function() 
-          HSMConfigMenu.LoadSettings("HypermoddedRTASettings")
-          local rulesetHashInt = CalculateHash(HSMConfigMenu.HypermoddedRTASettings, _G)
+        {Text = "Current Hypermodded (RTA) Ruleset",  event = function() 
+          HSMConfigMenu.LoadSettings("CurrentHypermoddedRTASettings")
+          local rulesetHashInt = CalculateHash(HSMConfigMenu.CurrentHypermoddedRTASettings, _G)
+          local rulesetHash =  HSMConfigMenu.ConvertIntToBase25(rulesetHashInt, 5)
+          HSMConfigMenu.CurrentRulesetHash = rulesetHash
+
+          for i = 1, #rulesetHash do
+            SetAnimation({ Name = HSMConfigMenu.HashImages[rulesetHash[i]], DestinationId = screen.Components["RulesetHashImage" .. i].Id, OffsetX = 0, OffsetY = 0})
+          end
+
+          HSMConfigMenu.updateRulesetHashDisplay()
+          HSMConfigMenu.SaveSettingsToGlobal()
+        end},
+
+        {Text = "Full Hypermodded (IGT) Ruleset",  event = function() 
+          HSMConfigMenu.LoadSettings("FullHypermoddedIGTSettings")
+          local rulesetHashInt = CalculateHash(HSMConfigMenu.FullHypermoddedIGTSettings, _G)
+          local rulesetHash =  HSMConfigMenu.ConvertIntToBase25(rulesetHashInt, 5)
+          HSMConfigMenu.CurrentRulesetHash = rulesetHash
+
+          for i = 1, #rulesetHash do
+            SetAnimation({ Name = HSMConfigMenu.HashImages[rulesetHash[i]], DestinationId = screen.Components["RulesetHashImage" .. i].Id, OffsetX = 0, OffsetY = 0})
+          end
+
+          HSMConfigMenu.updateRulesetHashDisplay()
+          HSMConfigMenu.SaveSettingsToGlobal()
+        end},
+        
+        {Text = "Full Hypermodded (RTA) Ruleset",  event = function() 
+          HSMConfigMenu.LoadSettings("FullHypermoddedRTASettings")
+          local rulesetHashInt = CalculateHash(HSMConfigMenu.FullHypermoddedRTASettings, _G)
           local rulesetHash =  HSMConfigMenu.ConvertIntToBase25(rulesetHashInt, 5)
           HSMConfigMenu.CurrentRulesetHash = rulesetHash
 

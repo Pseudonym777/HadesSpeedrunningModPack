@@ -154,7 +154,7 @@ HSMConfigMenu.SingleRunSettings = {
     {Key = "ThanatosControl.config.ThanatosSetting", Values = {"Vanilla", "Removed"}, Default = "Vanilla"},
 }
 
-HSMConfigMenu.HypermoddedRTASettings = {
+HSMConfigMenu.CurrentHypermoddedRTASettings = {
     {Key = "DontGetVorimed.config.Enabled", Values = {false, true}, Default = true},
     
     {Key = "DoorVisualIndicators.config.ShowMinibossDoorIndicator", Values = {false, true}, Default = false},
@@ -181,7 +181,7 @@ HSMConfigMenu.HypermoddedRTASettings = {
     {Key = "BoonControl.config.AllowOlympianControl", Values = {false, true}, Default = false},
     {Key = "BoonControl.config.AllowHermesControl", Values = {false, true}, Default = true},
     {Key = "BoonControl.config.AllowedHammerControl", Values = {0, 1, 2}, Default = 2},
-    {Key = "BoonControl.config.AllowRarityForce", Values = {false, true}, Default = true},
+    {Key = "BoonControl.config.AllowRarityForce", Values = {false, true}, Default = false},
     {Key = "BoonControl.config.AllowOverrides", Values = {false, true}, Default = false},
     {Key = "BoonControl.config.FirstBoonAlwaysEpic", Values = {false, true}, Default = false},
     {Key = "BoonControl.config.FirstBoonEpicOnPride", Values = {false, true}, Default = true},
@@ -191,9 +191,9 @@ HSMConfigMenu.HypermoddedRTASettings = {
     {Key = "DarknessDenied.config.RemoveDarkness", Values = {false, true}, Default = false},
     {Key = "DarknessDenied.config.RemoveInstadarkness", Values = {false, true}, Default = true},
     -- EnemyControl
-    {Key = "EnemyControl.config.EnemySetting", Values = {"Vanilla", "Hypermodded1", "Hypermodded2"}, Default = "Hypermodded2"},
+    {Key = "EnemyControl.config.EnemySetting", Values = {"Vanilla", "Hypermodded1", "Hypermodded2"}, Default = "Hypermodded1"},
     -- ForceSecondGod
-    {Key = "ForceSecondGod.config.Enabled", Values = {false, true}, Default = true},
+    {Key = "ForceSecondGod.config.Enabled", Values = {false, true}, Default = false},
     -- FreeRoomControl
     {Key = "FreeRoomControl.config.Enabled", Values = {false, true}, Default = true},
     -- Miniboss Control
@@ -206,7 +206,58 @@ HSMConfigMenu.HypermoddedRTASettings = {
 }
 
 
-HSMConfigMenu.HypermoddedIGTSettings = {
+HSMConfigMenu.CurrentHypermoddedIGTSettings = {
+    {Key = "DontGetVorimed.config.Enabled", Values = {false, true}, Default = true},
+    
+    {Key = "DoorVisualIndicators.config.ShowMinibossDoorIndicator", Values = {false, true}, Default = false},
+    {Key = "DoorVisualIndicators.config.ShowFountainDoorIndictor", Values = {false, true}, Default = true},
+    
+    {Key = "EllosBoonSelectorMod.config.ShowPreview", Values = {false, true}, Default = false},
+
+    {Key = "InteractableChaos.config.Enabled", Values = {false, true}, Default = false},
+
+    {Key = "RemoveCutscenes.config.RemoveIntro", Values = {false, true}, Default = true},
+    {Key = "RemoveCutscenes.config.RemoveOutro", Values = {false, true}, Default = true},
+
+    {Key = "RoomDeterminism.config.Enabled", Values = {false, true}, Default = false},
+    {Key = "RoomDeterminism.config.RoomGenerationAlgorithm", Values = {"Vanilla"}, Default = "Vanilla"},
+
+    {Key = "SatyrSackControl.config.Enabled", Values = {false, true}, Default = true},
+    {Key = "SatyrSackControl.config.MinSack", Values = {1, 2, 3, 4, 5}, Default = 2},
+    {Key = "SatyrSackControl.config.MaxSack", Values = {1, 2, 3, 4, 5}, Default = 2},
+
+    {Key = "ShowChamberNumber.config.ShowDepth", Values = {false, true}, Default = true},
+
+    -- BoonControl
+    {Key = "BoonControl.config.Enabled", Values = {false, true}, Default = true},
+    {Key = "BoonControl.config.AllowOlympianControl", Values = {false, true}, Default = false},
+    {Key = "BoonControl.config.AllowHermesControl", Values = {false, true}, Default = true},
+    {Key = "BoonControl.config.AllowedHammerControl", Values = {0, 1, 2}, Default = 2},
+    {Key = "BoonControl.config.AllowRarityForce", Values = {false, true}, Default = false},
+    {Key = "BoonControl.config.AllowOverrides", Values = {false, true}, Default = false},
+    {Key = "BoonControl.config.FirstBoonAlwaysEpic", Values = {false, true}, Default = false},
+    {Key = "BoonControl.config.FirstBoonEpicOnPride", Values = {false, true}, Default = true},
+    -- Chaos Control
+    {Key = "ChaosControl.config.ChaosSetting", Values = {"Vanilla", "Hypermodded"}, Default = "Hypermodded"},
+    -- DarknessDenied
+    {Key = "DarknessDenied.config.RemoveDarkness", Values = {false, true}, Default = false},
+    {Key = "DarknessDenied.config.RemoveInstadarkness", Values = {false, true}, Default = true},
+    -- EnemyControl
+    {Key = "EnemyControl.config.EnemySetting", Values = {"Vanilla", "Hypermodded1", "Hypermodded2"}, Default = "Hypermodded1"},
+    -- ForceSecondGod
+    {Key = "ForceSecondGod.config.Enabled", Values = {false, true}, Default = false},
+    -- FreeRoomControl
+    {Key = "FreeRoomControl.config.Enabled", Values = {false, true}, Default = true},
+    -- Miniboss Control
+    {Key = "MinibossControl.config.MinibossSetting", Values = {"Vanilla", "HyperDelivery1", "HyperDelivery", "Leaderboard", "Hypermodded"}, Default = "Hypermodded"},
+    -- SatyrSackControl
+    {Key = "SatyrSackControl.config.ForceShortTunnels", Values = {false, true}, Default = true},
+    -- WellControl
+    {Key = "WellControl.config.WellSetting", Values = {"Vanilla", "Hypermodded"}, Default = "Vanilla"},
+    {Key = "ThanatosControl.config.ThanatosSetting", Values = {"Vanilla", "Removed"}, Default = "Vanilla"},
+}
+
+HSMConfigMenu.FullHypermoddedRTASettings = {
     {Key = "DontGetVorimed.config.Enabled", Values = {false, true}, Default = true},
     
     {Key = "DoorVisualIndicators.config.ShowMinibossDoorIndicator", Values = {false, true}, Default = false},
@@ -235,7 +286,7 @@ HSMConfigMenu.HypermoddedIGTSettings = {
     {Key = "BoonControl.config.AllowedHammerControl", Values = {0, 1, 2}, Default = 2},
     {Key = "BoonControl.config.AllowRarityForce", Values = {false, true}, Default = true},
     {Key = "BoonControl.config.AllowOverrides", Values = {false, true}, Default = false},
-    {Key = "BoonControl.config.FirstBoonAlwaysEpic", Values = {false, true}, Default = false},
+    {Key = "BoonControl.config.FirstBoonAlwaysEpic", Values = {false, true}, Default = true},
     {Key = "BoonControl.config.FirstBoonEpicOnPride", Values = {false, true}, Default = true},
     -- Chaos Control
     {Key = "ChaosControl.config.ChaosSetting", Values = {"Vanilla", "Hypermodded"}, Default = "Hypermodded"},
@@ -253,7 +304,58 @@ HSMConfigMenu.HypermoddedIGTSettings = {
     -- SatyrSackControl
     {Key = "SatyrSackControl.config.ForceShortTunnels", Values = {false, true}, Default = true},
     -- WellControl
-    {Key = "WellControl.config.WellSetting", Values = {"Vanilla", "Hypermodded"}, Default = "Vanilla"},
+    {Key = "WellControl.config.WellSetting", Values = {"Vanilla", "Hypermodded"}, Default = "Hypermodded"},
+    {Key = "ThanatosControl.config.ThanatosSetting", Values = {"Vanilla", "Removed"}, Default = "Removed"},
+}
+
+HSMConfigMenu.FullHypermoddedIGTSettings = {
+    {Key = "DontGetVorimed.config.Enabled", Values = {false, true}, Default = true},
+    
+    {Key = "DoorVisualIndicators.config.ShowMinibossDoorIndicator", Values = {false, true}, Default = false},
+    {Key = "DoorVisualIndicators.config.ShowFountainDoorIndictor", Values = {false, true}, Default = true},
+    
+    {Key = "EllosBoonSelectorMod.config.ShowPreview", Values = {false, true}, Default = false},
+
+    {Key = "InteractableChaos.config.Enabled", Values = {false, true}, Default = false},
+
+    {Key = "RemoveCutscenes.config.RemoveIntro", Values = {false, true}, Default = true},
+    {Key = "RemoveCutscenes.config.RemoveOutro", Values = {false, true}, Default = true},
+
+    {Key = "RoomDeterminism.config.Enabled", Values = {false, true}, Default = false},
+    {Key = "RoomDeterminism.config.RoomGenerationAlgorithm", Values = {"Vanilla"}, Default = "Vanilla"},
+
+    {Key = "SatyrSackControl.config.Enabled", Values = {false, true}, Default = true},
+    {Key = "SatyrSackControl.config.MinSack", Values = {1, 2, 3, 4, 5}, Default = 2},
+    {Key = "SatyrSackControl.config.MaxSack", Values = {1, 2, 3, 4, 5}, Default = 2},
+
+    {Key = "ShowChamberNumber.config.ShowDepth", Values = {false, true}, Default = true},
+
+    -- BoonControl
+    {Key = "BoonControl.config.Enabled", Values = {false, true}, Default = true},
+    {Key = "BoonControl.config.AllowOlympianControl", Values = {false, true}, Default = false},
+    {Key = "BoonControl.config.AllowHermesControl", Values = {false, true}, Default = true},
+    {Key = "BoonControl.config.AllowedHammerControl", Values = {0, 1, 2}, Default = 2},
+    {Key = "BoonControl.config.AllowRarityForce", Values = {false, true}, Default = true},
+    {Key = "BoonControl.config.AllowOverrides", Values = {false, true}, Default = false},
+    {Key = "BoonControl.config.FirstBoonAlwaysEpic", Values = {false, true}, Default = true},
+    {Key = "BoonControl.config.FirstBoonEpicOnPride", Values = {false, true}, Default = true},
+    -- Chaos Control
+    {Key = "ChaosControl.config.ChaosSetting", Values = {"Vanilla", "Hypermodded"}, Default = "Hypermodded"},
+    -- DarknessDenied
+    {Key = "DarknessDenied.config.RemoveDarkness", Values = {false, true}, Default = false},
+    {Key = "DarknessDenied.config.RemoveInstadarkness", Values = {false, true}, Default = true},
+    -- EnemyControl
+    {Key = "EnemyControl.config.EnemySetting", Values = {"Vanilla", "Hypermodded1", "Hypermodded2"}, Default = "Hypermodded2"},
+    -- ForceSecondGod
+    {Key = "ForceSecondGod.config.Enabled", Values = {false, true}, Default = true},
+    -- FreeRoomControl
+    {Key = "FreeRoomControl.config.Enabled", Values = {false, true}, Default = true},
+    -- Miniboss Control
+    {Key = "MinibossControl.config.MinibossSetting", Values = {"Vanilla", "HyperDelivery1", "HyperDelivery", "Leaderboard", "Hypermodded"}, Default = "Hypermodded"},
+    -- SatyrSackControl
+    {Key = "SatyrSackControl.config.ForceShortTunnels", Values = {false, true}, Default = true},
+    -- WellControl
+    {Key = "WellControl.config.WellSetting", Values = {"Vanilla", "Hypermodded"}, Default = "Hypermodded"},
     {Key = "ThanatosControl.config.ThanatosSetting", Values = {"Vanilla", "Removed"}, Default = "Vanilla"},
 }
 
@@ -276,8 +378,10 @@ HSMConfigMenu.SettingsDefaults = {
     MultiRunSettings = 178857837593,
     SingleRunSettings = 178857837592,
     NonRulesetSettings = 0,
-    HypermoddedIGTSettings = 178860668644,
-    HypermoddedRTASettings = 178860668645,
+    CurrentHypermoddedIGTSettings = 178860602724,
+    CurrentHypermoddedRTASettings = 178860602725,
+    FullHypermoddedIGTSettings = 178860685030,
+    FullHypermoddedRTASettings = 178860685031,
 }
 
 -- Note: Add a key here to print out the default hash setting values on startup.
@@ -285,8 +389,10 @@ local rulesetHashesToCalculate = {
     "RulesetSettings",
     "MultiRunSettings",
     "SingleRunSettings",
-    "HypermoddedIGTSettings",
-    "HypermoddedRTASettings",
+    "CurrentHypermoddedIGTSettings",
+    "CurrentHypermoddedRTASettings",
+    "FullHypermoddedIGTSettings",
+    "FullHypermoddedRTASettings",
 }
 ModUtil.LoadOnce(function()
     DebugPrint { Text = "-------------------------------"}
