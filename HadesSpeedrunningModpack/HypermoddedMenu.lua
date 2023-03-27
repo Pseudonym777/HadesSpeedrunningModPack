@@ -616,7 +616,7 @@ screen.Components["FreeRoomControlEnabledTextBox"] = CreateScreenComponent({
       firstBoonSettingText = "Epic on God's Pride"
   elseif BoonControl.config.FirstBoonAlwaysEpic == true and
     BoonControl.config.FirstBoonEpicOnPride == true then
-      firstBoonSettingText = "Epic on God's Pride"
+      firstBoonSettingText = "Always Epic"
   end
 
   local rarityOptions = {
